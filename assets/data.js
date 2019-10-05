@@ -72,7 +72,7 @@ function setMeasure(data) {
 function workOutMonthNeeded(data) {
     //look up month required
     month = productMonth[data];
-    if (month == "pickdate") {
+    if (month === "pickdate") {
         askForDate();
     }
     monthNeeded = {
@@ -102,7 +102,7 @@ async function getInflationFigure() {
     const timeSeries = await getDataforSeries(cdid);
     const yearNeeded = await getYearNeededFromSeries(timeSeries, monthNeeded)
     const dataValue = await getDataValueforUser(yearNeeded, timeSeries, monthNeeded);
-    console.log(dataValue);
+    addDataToPage(dataValue)
 }
 
 //Takes a measure of inflation and gets the CDID
@@ -131,7 +131,7 @@ function getDataforSeries(cdid) {
         })
 }
 
-
+//The year may be this year or last year depending on where we are and what has been published
 function getYearNeededFromSeries(timeSeries, monthNeeded, today) {
 
     let publishedYear = timeSeries.date.substring(0, 4);
@@ -159,6 +159,7 @@ function getYearNeededFromSeries(timeSeries, monthNeeded, today) {
     }
 }
 
+//Once we have all the info return just the data we need to provide to user
 function getDataValueforUser(yearNeeded, timeSeries, monthNeeded) {
     let dateNeeded = yearNeeded + " " + monthNeeded.text
     const dataValue = timeSeries.data.find(({

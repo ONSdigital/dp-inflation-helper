@@ -1,5 +1,8 @@
 Change log
 ==========
 
-0.1.0 (2016-10-20)
+1.0.0 (2019-10-03)
+- Basic working version
+
+0.1.0 (2019-10-03)
 - WiP to create basic structure

@@ -5,9 +5,11 @@ Tool to help guide users to the specific inflation figure they need withough req
 
 Runs client side without Javascript and progressively enhanced with Js to offer greater specificity to the user. 
 
+Styling from [ONS website pattern library](http://onsdigital.github.io/ons-pattern-library-starter/)
+
 ### Tests
 
-Simple tests exist and the seperate `tests.js` file will only be loaded when running on `http://127.0.0.1`. Run tests with `test()` in the console.
+Simple tests exist and the seperate `tests.js` file will only be loaded when running on local server on hostname `http://127.0.0.1`. Run tests with `test()` in the console.
 
 ### WiP version
 

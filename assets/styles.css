@@ -1,0 +1,16 @@
+.measure,
+.set {
+    display: none;
+}
+
+.measure:checked+.set {
+    display: block;
+}
+
+label {
+    font-weight:bold;
+    text-decoration: underline;
+    cursor:pointer;
+    padding-right:10px;
+    
+}
