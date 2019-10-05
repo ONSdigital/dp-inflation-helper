@@ -3,7 +3,6 @@
 
 <head>
     <title>Inflation helper</title>
-    <Description>Help finding the specific inflation figure you need without requiring you to have an in depth knowledge of the statistics or ONS website.</Description>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <meta content="width=device-width,initial-scale=1.0,user-scalable=1" name="viewport">
     <!--[if lte IE 8]>
@@ -16,21 +15,21 @@
     <link rel="stylesheet" href="//cdn.ons.gov.uk/sixteens/a62dd01/css/main.css">
     <link rel="stylesheet" href="assets/styles.css">
     <!--<![endif]-->
-
     <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-82810278-4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-82810278-4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'UA-82810278-4');
-</script>
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
 
+        gtag('config', 'UA-82810278-4');
+    </script>
 </head>
 
 <body>
-
     <header>
         <a class="skiplink" href="#main" tabindex="0">
             Skip to main content
@@ -53,9 +52,6 @@
 
             </div>
         </div>
-
-
-
     </header>
     <div class="page-neutral-intro background--astral">
         <div class="wrapper">
@@ -71,28 +67,35 @@
                         <form id='fallback'>
                             <fieldset>
                                 <legend>
-                                        <p class="page-intro__content margin-bottom--0">
-                                            Get inflation for:
-                                        </p>
+                                    <p class="page-intro__content margin-bottom--0">
+                                        Get inflation for:
+                                    </p>
                                 </legend>
-                                <label class ="padding-left--2 padding-right--2" for='rpi'>Student loan</label> <span class ="padding-right--2">|</span>
-                                <label class ="padding-right--2" for='cpi'>State pension</label><span class ="padding-right--2" >|</span>
-                                <label class ="padding-right--2" for='cpih'>CPIH</label><span class ="padding-right--2">|</span>
-                                <label class ="padding-right--2" for='rpi'>RPI</label><span class ="padding-right--2">|</span>
-                                <label class ="padding-right--2" for='cpi'>CPI</label>
+                                <label class="padding-left--2 padding-right--2" for='rpi'>Student loan</label> <span
+                                    class="padding-right--2">|</span>
+                                <label class="padding-right--2" for='cpi'>State pension</label><span
+                                    class="padding-right--2">|</span>
+                                <label class="padding-right--2" for='cpih'>CPIH</label><span
+                                    class="padding-right--2">|</span>
+                                <label class="padding-right--2" for='rpi'>RPI</label><span
+                                    class="padding-right--2">|</span>
+                                <label class="padding-right--2" for='cpi'>CPI</label>
                             </fieldset>
 
                             <input id='rpi' class='measure' name='measure' type='radio'>
-                            
+
                             <fieldset class='set'>
-                                
+
                                 <div id="rpi">
                                     <p>
                                         <a class="btn btn--primary" title="Download RPI as xls"
                                             href="/generator?format=xls&amp;uri=/economy/inflationandpriceindices/timeseries/czbh/mm23">Download
                                             RPI as xls</a>
                                     </p>
-                                    <p>ONS does not recommend the use of RPI. For more information see <a href = 'https://www.ons.gov.uk/economy/inflationandpriceindices/articles/shortcomingsoftheretailpricesindexasameasureofinflation/2018-03-08' style = 'color:white;text-decoration: underline' > Shortcomings of the Retail Prices Index as a measure of inflation</a></p>
+                                    <p>ONS does not recommend the use of RPI. For more information see <a
+                                            href='https://www.ons.gov.uk/economy/inflationandpriceindices/articles/shortcomingsoftheretailpricesindexasameasureofinflation/2018-03-08'
+                                            style='color:white;text-decoration: underline'> Shortcomings of the Retail
+                                            Prices Index as a measure of inflation</a></p>
                                 </div>
                             </fieldset>
 
@@ -218,10 +221,7 @@
             </p>
         </div>
     </div>
-
-
 </body>
-
 <script src="assets/content.js"></script>
 <script src="assets/data.js"></script>
 <script>
