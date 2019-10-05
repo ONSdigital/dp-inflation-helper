@@ -1,4 +1,4 @@
-Inflation helper (WiP)
+Inflation helper
 ================
 
 Tool to help guide users to the specific inflation figure they need withough requiring them to have an in depth knowledge of the statistics or ONS website.
@@ -11,7 +11,7 @@ Styling from [ONS website pattern library](http://onsdigital.github.io/ons-patte
 
 Simple tests exist and the seperate `tests.js` file will only be loaded when running on local server on hostname `http://127.0.0.1`. Run tests with `test()` in the console.
 
-### WiP version
+### Current version
 
 Hosted on Github pages at [https://onsdigital.github.io/dp-inflation-helper/](https://onsdigital.github.io/dp-inflation-helper/)
 
