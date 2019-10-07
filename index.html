@@ -131,31 +131,29 @@
             <div class="col-wrap" id="js-enabled" style="display:none">
                 <div class="col">
                     <div class="col col--md-47 col--lg-34">
-                        <div>
-                            <p class="page-intro__content margin-bottom--0">
-                                Get inflation for
-                                <select onchange="getInflationMeasureAndDate(this.value)">
-                                    <option disabled="true" selected>
-                                        --- pick product/measure ---
-                                    </option>
-                                    <option value="pension">
-                                        State pension
-                                    </option>
-                                    <option value="student">
-                                        Student loan
-                                    </option>
-                                    <option value="cpi">
-                                        CPI based
-                                    </option>
-                                    <option value="cpih">
-                                        CPIH based
-                                    </option>
-                                    <option value="rpi">
-                                        RPI based
-                                    </option>
-                                </select>
-                            </p>
-                        </div>
+                        <p class="page-intro__content margin-bottom--0">
+                            Get inflation for
+                            <select onchange="getInflationMeasureAndDate(this.value)">
+                                <option disabled="true" selected>
+                                    --- pick product/measure ---
+                                </option>
+                                <option value="pension">
+                                    State pension
+                                </option>
+                                <option value="student">
+                                    Student loan
+                                </option>
+                                <option value="cpi">
+                                    CPI based
+                                </option>
+                                <option value="cpih">
+                                    CPIH based
+                                </option>
+                                <option value="rpi">
+                                    RPI based
+                                </option>
+                            </select>
+                        </p>
                         <div id="date" style="display:none">
                             <h3>For
                                 <select onchange="dateSelection(this.value)">
@@ -213,7 +211,7 @@
     </div>
     <div class="footer">
         <div class="wrapper">
-            <img class="footer-license__img" alt="OGL" width="60" src="https://www.ons.gov.uk/img/ogl.png">
+            <img class="footer-license__img padding-top-sm--2" alt="OGL" width="60" src="https://www.ons.gov.uk/img/ogl.png">
             <p class="footer-license__text margin-left-sm--0 padding-top--2">
                 All content is available under the <a
                     href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open Government
