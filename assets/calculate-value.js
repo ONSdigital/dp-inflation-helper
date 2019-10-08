@@ -24,31 +24,16 @@ function getDataforSeries(cdid) {
         })
 }
 
-//The year may be this year or last year depending on where we are and what has been published
 function getYearNeededFromSeries(timeSeries, monthNeeded, today) {
-
-    let publishedYear = timeSeries.date.substring(0, 4);
-    let publishedMonth = timeSeries.date.substring(4, 6);
-    let publishedDay = timeSeries.date.substring(6, 8);
-    let timeSeriesDate = new Date(publishedYear, publishedMonth - 1, publishedDay, "09", "30");
-
-    //logic to work out if you need this years or last years figure based on current date and publish date
-    if (monthNeeded.integer - publishedMonth >= 0) {
-        yearNeeded = publishedYear - 1
-        return yearNeeded
-
-        //deal with the case of if being this month
-    } else if ((monthNeeded.integer - publishedMonth) === 0) {
-        if (today - timeSeriesDate > 0) {
-            yearNeeded = publishedYear - 1
-            return yearNeeded
-        } else {
-            yearNeeded = publishedYear
-            return yearNeeded
-        }
+    currentYear = today.getFullYear()
+    const thisYear = timeSeries.data.find(({
+        date
+    }) => date === currentYear + " " + monthNeeded.text);
+    if (thisYear != null) {
+        return currentYear
     } else {
-        yearNeeded = publishedYear
-        return yearNeeded
+        //didnt find current year so return last year
+        return currentYear - 1
     }
 }
 

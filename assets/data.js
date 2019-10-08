@@ -59,7 +59,7 @@ async function getInflationMeasureAndDate(data) {
 async function getInflationFigure() {
     const cdid = await getCDID(measure);
     const timeSeries = await getDataforSeries(cdid);
-    const yearNeeded = await getYearNeededFromSeries(timeSeries, monthNeeded)
+    const yearNeeded = await getYearNeededFromSeries(timeSeries, monthNeeded, today)
     const dataValue = await getDataValueforUser(yearNeeded, timeSeries, monthNeeded);
     addDataToPage(dataValue)
 }
