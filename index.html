@@ -133,8 +133,7 @@
                     <div class="col col--md-47 col--lg-34">
                         <p class="page-intro__content margin-bottom--0">
                             Get inflation for
-                            <select id="measure" onchange="getInflationMeasureAndDate(this.value)">
-                                <label for="measure">Pick product/measure</label>
+                            <select onchange="getInflationMeasureAndDate(this.value)">
                                 <option disabled="true" selected>
                                     --- pick product/measure ---
                                 </option>
@@ -157,8 +156,7 @@
                         </p>
                         <div id="date" style="display:none">
                             <h3>For
-                                <select id="month" onchange="dateSelection(this.value)">
-                                    <label for="month">Pick month</label>
+                                <select onchange="dateSelection(this.value)">
                                     <option disabled="true" selected>
                                         --- pick month ---
                                     </option>
@@ -205,7 +203,6 @@
                 </div>
             </div>
             <div id="results" class="col col--md-47 col--lg-34">
-                <h2 aria-label="Results" style="display:none">Results</h2>
                 <p id="number" class="tiles__figure--home"></p>
                 <p id="measure"></p>
                 <p id="warning"></p>
