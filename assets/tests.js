@@ -43,14 +43,13 @@ async function test() {
 
     let today = new Date ("17 Feb 2017");
     let yearNeeded = await getYearNeededFromSeries(timeSeries, monthNeeded, today)
-    if (yearNeeded == "2017") {
+    if (yearNeeded == "2016") {
         console.log("Test 6: Pass")
     }else {
         console.log("Test 6: Fail")
         console.log(yearNeeded)
     };
 
-    yearNeeded = "2016"
     let dataValue = await getDataValueforUser(yearNeeded, timeSeries, monthNeeded);
     if (dataValue.value == "0.8") {
         console.log("Test 7: Pass")
