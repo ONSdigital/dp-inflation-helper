@@ -1,5 +1,6 @@
 document.getElementById("fallback").style = "display:none";
-document.getElementById("js-enabled").style = "display:";
+document.getElementById("start-message").style = "display:";
+
 
 const url = "https://www.ons.gov.uk/economy/inflationandpriceindices/timeseries/";
 
@@ -42,6 +43,12 @@ const monthMap = {
 
 let releaseDate = ""
 let today = new Date();
+
+function start() {
+    document.getElementById("start-message").style = "display:none";
+    document.getElementById("js-enabled").style = "display:";
+    
+}
 
 //gives us the inflation measure a user needs and gets the date or asks user for it
 async function getInflationMeasureAndDate(data) {

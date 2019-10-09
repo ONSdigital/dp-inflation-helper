@@ -14,23 +14,18 @@
     <![endif]-->
     <!--[if gt IE 9]><!-->
     <link rel="stylesheet" href="//cdn.ons.gov.uk/sixteens/a62dd01/css/main.css">
-    <link rel="stylesheet" href="assets/styles.css">
     <!--<![endif]-->
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-82810278-4"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-82810278-4');
-    </script>
 </head>
 
 <body>
+    <div class="background--poppy">
+        <div class="wrapper">
+            <div class="padding-top--1 padding-bottom--1">
+                <p class="margin-bottom--0 margin-top--0 font-xsmall"><strong class="banner__tag">Warning</strong>
+                    this is a prototype. The content may not be complete or accurate.</p>
+            </div>
+        </div>
+    </div>
     <header>
         <a class="skiplink" href="#main" tabindex="0">
             Skip to main content
@@ -62,31 +57,29 @@
                         <h1 class="page-intro__title page-intro__title--home">
                             Inflation estimate helper
                         </h1>
-                        <p class="page-intro__content margin-bottom--0">
-                            Select the payment or select the inflation measure
-                        </p>
                         <form id='fallback'>
+                            <p class="page-intro__content margin-bottom--0">
+                                Select the payment or select the inflation measure
+                            </p>
                             <fieldset>
                                 <legend>
                                     <p class="page-intro__content margin-bottom--0">
-                                        Get inflation for:
+                                        What are you looking for?
                                     </p>
                                 </legend>
-                                <label class="padding-left--2 padding-right--2" for='rpi'>Student loan</label> <span
+                                <label class="label-fallback padding-left--2 padding-right--2" for='rpi'>Student
+                                    loan</label> <span class="padding-right--2">|</span>
+                                <label class="label-fallback padding-right--2" for='cpi'>State pension</label><span
                                     class="padding-right--2">|</span>
-                                <label class="padding-right--2" for='cpi'>State pension</label><span
+                                <label class="label-fallback padding-right--2" for='cpih'>CPIH</label><span
                                     class="padding-right--2">|</span>
-                                <label class="padding-right--2" for='cpih'>CPIH</label><span
+                                <label class="label-fallback padding-right--2" for='rpi'>RPI</label><span
                                     class="padding-right--2">|</span>
-                                <label class="padding-right--2" for='rpi'>RPI</label><span
-                                    class="padding-right--2">|</span>
-                                <label class="padding-right--2" for='cpi'>CPI</label>
+                                <label class="label-fallback padding-right--2" for='cpi'>CPI</label>
                             </fieldset>
 
                             <input id='rpi' class='measure' name='measure' type='radio'>
-
                             <fieldset class='set'>
-
                                 <div id="rpi">
                                     <p>
                                         <a class="btn btn--primary" title="Download RPI as xls"
@@ -121,40 +114,63 @@
                                     </p>
                                 </div>
                             </fieldset>
-                            <p id="disclaimer">NOTE: This is the inflation measure produced by ONS linked to your
-                                selection. The actual figure used for calculating may be different.</p>
-
                         </form>
                     </div>
                 </div>
             </div>
+
+            <div class="col-wrap" id="start-message" style="display:none">
+                <div class="col">
+                    <div class="col col--md-47 col--lg-34">
+                        <p class="page-intro__content margin-bottom--0">Use this service to:
+                            <ul>
+                                <li>...</li>
+                                <li>...</li>
+                            </ul>
+                        </p>
+                        <button class="btn btn--secondary width--15" onclick="start()"><strong>Start now
+                            </strong></button>
+                    </div>
+                </div>
+            </div>
+
+
+
             <!-- Drop down selector for when Javascript is switched on -->
             <div class="col-wrap" id="js-enabled" style="display:none">
                 <div class="col">
                     <div class="col col--md-47 col--lg-34">
                         <p class="page-intro__content margin-bottom--0">
-                            Get inflation for
-                            <select aria-label="pick product/measure" onchange="getInflationMeasureAndDate(this.value)">
-                                <option disabled="true" selected>
-                                    --- pick product/measure ---
-                                </option>
-                                <option value="pension">
-                                    State pension
-                                </option>
-                                <option value="student">
-                                    Student loan
-                                </option>
-                                <option value="cpi">
-                                    CPI based
-                                </option>
-                                <option value="cpih">
-                                    CPIH based
-                                </option>
-                                <option value="rpi">
-                                    RPI based
-                                </option>
-                            </select>
+                            What are you looking for?
                         </p>
+                        <div>
+                            <input type="radio" id="pension" name="pick-product" value="pension"
+                                onchange="getInflationMeasureAndDate(this.value)">
+                            <label for="pension">State pension</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="student" name="pick-product" value="student"
+                                onchange="getInflationMeasureAndDate(this.value)">
+                            <label for="student">Student loan</label>
+                        </div>
+                        <hr>
+                        <p class="page-intro__content margin-bottom--0">For other payments plase select the inflation measure the adjustment is based on:</p>
+                        <div>
+                            <input type="radio" id="cpi" name="pick-product" value="cpi"
+                                onchange="getInflationMeasureAndDate(this.value)">
+                            <label for="cpi">CPI: Consumer Prices Index</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="cpih" name="pick-product" value="cpih"
+                                onchange="getInflationMeasureAndDate(this.value)">
+                            <label for="cpih">CPIH: Consumer Prices Index including owner occupiers’ housing
+                                costs</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="rpi" name="pick-product" value="rpi"
+                                onchange="getInflationMeasureAndDate(this.value)">
+                            <label for="rpi">RPI: Retail Price index</label>
+                        </div>
                         <div id="date" style="display:none">
                             <h3>For
                                 <select aria-label="pick month" onchange="dateSelection(this.value)">
@@ -237,6 +253,19 @@
         js.src = "assets/tests.js"
     }
     head.appendChild(js);
+</script>
+<link rel="stylesheet" href="assets/styles.css">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-82810278-4"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-82810278-4');
 </script>
 
 </html>
