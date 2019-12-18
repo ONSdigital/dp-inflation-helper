@@ -124,8 +124,8 @@
                     <div class="col col--md-47 col--lg-34">
                         <p class="page-intro__content margin-bottom--0">Use this service to:
                             <ul>
-                                <li>...</li>
-                                <li>...</li>
+                                <li>Find out how much a payment you make or recieve will increase for common payments</li>
+                                <li>Use the appropriate inflation measure and month to find the change for other payments</li>
                             </ul>
                         </p>
                         <button class="btn btn--secondary width--15" onclick="start()"><strong>Start now
@@ -134,8 +134,6 @@
                 </div>
             </div>
 
-
-
             <!-- Drop down selector for when Javascript is switched on -->
             <div class="col-wrap" id="js-enabled" style="display:none">
                 <div class="col">
@@ -143,6 +141,7 @@
                         <p class="page-intro__content margin-bottom--0">
                             What are you looking for?
                         </p>
+                    <div id="knownPayments">
                         <div>
                             <input type="radio" id="pension" name="pick-product" value="pension"
                                 onchange="getInflationMeasureAndDate(this.value)">
@@ -153,8 +152,12 @@
                                 onchange="getInflationMeasureAndDate(this.value)">
                             <label for="student">Student loan</label>
                         </div>
+                    <div id="break">
                         <hr>
-                        <p class="page-intro__content margin-bottom--0">For other payments plase select the inflation measure the adjustment is based on:</p>
+                        <p class="page-intro__content margin-bottom--0">For other payments you will need to know the inflation measure used in the calculation</p>
+                    </div>
+                    </div>
+                    <div id="otherPayments">
                         <div>
                             <input type="radio" id="cpi" name="pick-product" value="cpi"
                                 onchange="getInflationMeasureAndDate(this.value)">
@@ -171,6 +174,7 @@
                                 onchange="getInflationMeasureAndDate(this.value)">
                             <label for="rpi">RPI: Retail Price index</label>
                         </div>
+                    </div>
                         <div id="date" style="display:none">
                             <h3>For
                                 <select aria-label="pick month" onchange="dateSelection(this.value)">
@@ -224,7 +228,11 @@
                 <p id="measure"></p>
                 <p id="warning"></p>
             </div>
+            <div id="back" style="display:none">
+                <a href="/">Back</a>
+            </div>
         </div>
+
     </div>
     <div class="footer">
         <div class="wrapper">

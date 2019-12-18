@@ -47,11 +47,13 @@ let today = new Date();
 function start() {
     document.getElementById("start-message").style = "display:none";
     document.getElementById("js-enabled").style = "display:";
-    
+    document.getElementById("back").style = "display:";
 }
 
 //gives us the inflation measure a user needs and gets the date or asks user for it
 async function getInflationMeasureAndDate(data) {
+
+    hideOptionsPostSelection (data)
     const measure = await setMeasure(data);
     const monthNeeded = await workOutMonthNeeded(data);
 

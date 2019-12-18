@@ -1,3 +1,15 @@
+//once selection is made hides the other branch or options
+function hideOptionsPostSelection (measure) {
+    document.getElementById("break").style = "display:none";
+    if ((measure=="cpi")||(measure=="rpi")||(measure=="cpih")){
+        console.log("Here")
+        document.getElementById("knownPayments").style = "display:none";
+    } else {
+        document.getElementById("otherPayments").style = "display:none";
+    }
+    return;
+}
+
 //Adds the figure and description to the page once selections have been made
 function addDataToPage(dataValue) {
     document.getElementById("number").innerHTML = dataValue.value + "%";
